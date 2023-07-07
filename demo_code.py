@@ -1,8 +1,7 @@
-import random
 import os
-import subprocess
+import random
 import ssl
-
+import subprocess
 
 AWS_SECRET_KEY = "d6s$f9g!j8mg7hw?n&2"
 
@@ -17,16 +16,18 @@ class BaseNumberGenerator:
     def get_number(self, min_max):
         raise NotImplementedError
 
+    def hello():
+        print("hello")
+
     @staticmethod
     def smethod():
         """static method-to-be"""
-    
+
     @staticmethod
     def smethod2():
         """static method-to-be"""
         return
-         
-        
+
     @classmethod
     def cmethod(cls, something):
         """class method-to-be"""
