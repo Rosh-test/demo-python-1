@@ -19,6 +19,9 @@ class BaseNumberGenerator:
     def hello():
         print("hello")
 
+    def bar():
+        print("bar")
+
     @staticmethod
     def smethod():
         """static method-to-be"""
