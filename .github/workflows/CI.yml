@@ -39,5 +39,6 @@ jobs:
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
         ./bin/deepsource report --analyzer test-coverage --key go --value-file ./go_coverage.out
         ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./js_coverage.xml
+        ./bin/deepsource report --analyzer test-coverage --key php --value-file ./php_coverage.xml
         
         
