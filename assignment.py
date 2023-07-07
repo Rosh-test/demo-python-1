@@ -7,6 +7,7 @@ e = 1
 f = 1
 g = 1
 h = 1
+i = 1
 
 def non_tested_func():
   """
