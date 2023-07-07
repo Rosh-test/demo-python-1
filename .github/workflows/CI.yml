@@ -35,6 +35,5 @@ jobs:
         curl https://deepsource.io/cli | sh
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_PROD
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
-        ./bin/deepsource report --analyzer test-coverage --key javascript --value-file ./js_coverage.xml
         
         
