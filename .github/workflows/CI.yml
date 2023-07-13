@@ -30,10 +30,22 @@ jobs:
         pip install pytest-cov django
         pytest --cov=./ --cov-report=xml
         
-    - name: Report test coverage to DeepSource prod (python, js)  
+    - name: Add git safe.directory for container
       run: |
-        curl https://deepsource.io/cli | sh
-        export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_PROD
-        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
+        mkdir -p /home/runner/work/_temp/_github_home
+        printf "[safe]\ndirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
+
+    - name: Report test-coverage to DeepSource
+      uses: deepsourcelabs/test-coverage-action@master
+      with:
+        key: python
+        coverage-file: ./coverage.xml
+        dsn: ${{ secrets.DEEPSOURCE_DSN_PROD }}
+        
+#     - name: Report test coverage to DeepSource prod (python, js)  
+#       run: |
+#         curl https://deepsource.io/cli | sh
+#         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_PROD
+#         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
         
         
